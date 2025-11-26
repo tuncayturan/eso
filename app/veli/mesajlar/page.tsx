@@ -289,7 +289,8 @@ export default function MesajlarPage() {
                 }`}
               >
                 <img
-                  src={t.photoURL}
+                  src={t.photoURL || "/default-avatar.png"}
+                  alt={t.name}
                   className="w-10 h-10 rounded-full object-cover border dark:border-neutral-600"
                 />
 
