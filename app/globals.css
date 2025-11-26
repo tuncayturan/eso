@@ -1,0 +1,284 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ios-blue: #007AFF;
+  --ios-blue-dark: #0051D5;
+  --ios-gray: #8E8E93;
+  --ios-gray-light: #F2F2F7;
+  --ios-gray-dark: #1C1C1E;
+  --ios-green: #34C759;
+  --ios-red: #FF3B30;
+  --ios-orange: #FF9500;
+  --ios-purple: #AF52DE;
+  --ios-pink: #FF2D55;
+  --ios-teal: #5AC8FA;
+  --ios-indigo: #5856D6;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes bubbleAppear {
+  0% { 
+    transform: scale(0.85); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+@keyframes slideDown {
+  0% { 
+    transform: translateY(-20px); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateY(0px); 
+    opacity: 1; 
+  }
+}
+
+@keyframes fadeIn {
+  0% { 
+    opacity: 0; 
+  }
+  100% { 
+    opacity: 1; 
+  }
+}
+
+@keyframes scaleIn {
+  0% { 
+    transform: scale(0.9); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+.animate-bubble {
+  animation: bubbleAppear 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-slideDown {
+  animation: slideDown 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass {
+  background: linear-gradient(135deg, 
+    rgba(18, 18, 20, 0.85) 0%,
+    rgba(28, 28, 30, 0.85) 50%,
+    rgba(22, 22, 24, 0.85) 100%);
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.ios-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .ios-card {
+  background: linear-gradient(to bottom right, rgba(28, 28, 30, 0.9), rgba(40, 40, 42, 0.9));
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(0, 122, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .ios-card:hover {
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.6),
+    0 4px 16px rgba(0, 122, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.ios-button {
+  background: var(--ios-blue);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+}
+
+.dark .ios-button {
+  background: linear-gradient(to bottom right, var(--ios-blue), var(--ios-indigo));
+  box-shadow: 0 4px 15px rgba(0, 122, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(0, 122, 255, 0.4);
+}
+
+.ios-button:active {
+  transform: scale(0.96);
+  box-shadow: 0 1px 4px rgba(0, 122, 255, 0.2);
+}
+
+.ios-button-secondary {
+  background: rgba(242, 242, 247, 0.8);
+  color: var(--ios-blue);
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .ios-button-secondary {
+  background: rgba(44, 44, 46, 0.8);
+  color: var(--ios-teal);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ios-button-red {
+  background: var(--ios-red);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(255, 59, 48, 0.3);
+  border: 1px solid rgba(255, 59, 48, 0.2);
+}
+
+.dark .ios-button-red {
+  background: linear-gradient(to bottom right, var(--ios-red), var(--ios-pink));
+  box-shadow: 0 4px 15px rgba(255, 59, 48, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 59, 48, 0.4);
+}
+
+.ios-input {
+  background: rgba(242, 242, 247, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.dark .ios-input {
+  background: rgba(44, 44, 46, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.ios-input:focus {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: var(--ios-blue);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1), inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.dark .ios-input:focus {
+  background: rgba(44, 44, 46, 0.95);
+  border-color: var(--ios-blue);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+.dark .shimmer::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    rgba(0, 122, 255, 0.12),
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+}
+
+.dark {
+  background: linear-gradient(to bottom right, #0a0a0a, #1a1a1a, #0a0a0a);
+  background-attachment: fixed;
+}
+
+.dark body {
+  background: linear-gradient(135deg,
+    #0a0a0b 0%,
+    #121214 25%,
+    #0f0f11 50%,
+    #141416 75%,
+    #0a0a0b 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.dark h1, .dark h2, .dark h3 {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dark .ios-button:hover {
+  box-shadow: 
+    0 6px 20px rgba(0, 122, 255, 0.5),
+    0 0 30px rgba(0, 122, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.dark .ios-button:active {
+  box-shadow: 
+    0 2px 8px rgba(0, 122, 255, 0.3),
+    inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
