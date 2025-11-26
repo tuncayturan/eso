@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
-import { Loader2, Trash2, Plus, Search, ShieldCheck, X } from "lucide-react";
+import { Loader2, Trash2, Plus, Search, Users, X } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
@@ -153,7 +153,7 @@ export default function KullaniciYonetimiPage() {
           <div className="p-2 rounded-ios-sm bg-gradient-to-br from-ios-blue/10 to-ios-indigo/10 
                         dark:from-ios-blue/20 dark:to-ios-indigo/20
                         border border-ios-blue/20 dark:border-ios-blue/30">
-            <ShieldCheck className="w-6 h-6 text-ios-blue dark:text-ios-teal" />
+            <Users className="w-6 h-6 text-ios-blue dark:text-ios-teal" />
           </div>
           Kullanıcı Yönetimi
         </h1>
@@ -290,7 +290,7 @@ export default function KullaniciYonetimiPage() {
                 <td colSpan={5} className="px-4 py-12 text-center">
                   <div className="flex flex-col items-center gap-3">
                     <div className="w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-                      <ShieldCheck className="w-8 h-8 text-ios-gray dark:text-gray-400" />
+                      <Users className="w-8 h-8 text-ios-gray dark:text-gray-400" />
                     </div>
                     <p className="text-gray-500 dark:text-gray-400 font-medium">
                       Kayıt bulunamadı

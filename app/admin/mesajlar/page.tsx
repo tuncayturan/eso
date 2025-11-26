@@ -22,7 +22,7 @@ import {
 } from "firebase/firestore";
 import { useAuth } from "@/context/AuthContext";
 
-import { Send, X, Check, CheckCheck, Trash2, Search } from "lucide-react";
+import { Send, X, Check, CheckCheck, Trash2, Search, MessageCircle } from "lucide-react";
 
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
@@ -260,8 +260,13 @@ async function clearChat() {
 
       {/* iOS Premium Header */}
       <div className="mb-6">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
-          📩 Mesajlar
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-3">
+          <div className="p-2 rounded-ios-sm bg-gradient-to-br from-ios-blue/10 to-ios-indigo/10 
+                        dark:from-ios-blue/20 dark:to-ios-indigo/20
+                        border border-ios-blue/20 dark:border-ios-blue/30">
+            <MessageCircle className="w-6 h-6 text-ios-blue dark:text-ios-teal" />
+          </div>
+          Mesajlar
         </h1>
         <p className="text-sm text-ios-gray dark:text-gray-400">
           Velilerle mesajlaşın ve iletişim kurun

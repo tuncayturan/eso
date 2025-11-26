@@ -20,7 +20,7 @@ import {
 } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import toast, { Toaster } from "react-hot-toast";
-import { Pencil, Trash2, Loader2, Plus, Search, X } from "lucide-react";
+import { Pencil, Trash2, Loader2, Plus, Search, X, Bell } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 
 type Announcement = {
@@ -448,8 +448,13 @@ export default function DuyurularPage() {
 
       {/* iOS Premium Header */}
       <div className="mb-6">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
-          📢 Duyurular
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-3">
+          <div className="p-2 rounded-ios-sm bg-gradient-to-br from-ios-blue/10 to-ios-indigo/10 
+                        dark:from-ios-blue/20 dark:to-ios-indigo/20
+                        border border-ios-blue/20 dark:border-ios-blue/30">
+            <Bell className="w-6 h-6 text-ios-blue dark:text-ios-teal" />
+          </div>
+          Duyurular
         </h1>
         <p className="text-sm text-ios-gray dark:text-gray-400">
           Yeni duyuru oluşturun ve mevcut duyuruları yönetin

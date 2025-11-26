@@ -10,7 +10,7 @@ import {
 } from "firebase/auth";
 import { useAuth } from "@/context/AuthContext";
 import toast, { Toaster } from "react-hot-toast";
-import { Loader2, Save, Lock, Upload } from "lucide-react";
+import { Loader2, Save, Lock, Upload, ClipboardList } from "lucide-react";
 import Image from "next/image";
 
 export default function ProfilePage() {
@@ -161,9 +161,9 @@ export default function ProfilePage() {
           <div className="p-2 rounded-ios-sm bg-gradient-to-br from-ios-blue/10 to-ios-indigo/10 
                         dark:from-ios-blue/20 dark:to-ios-indigo/20
                         border border-ios-blue/20 dark:border-ios-blue/30">
-            <Lock className="w-6 h-6 text-ios-blue dark:text-ios-teal" />
+            <ClipboardList className="w-6 h-6 text-ios-blue dark:text-ios-teal" />
           </div>
-          Profilim
+          Profil
         </h1>
         <p className="text-sm text-ios-gray dark:text-gray-400">
           Profil bilgilerinizi ve şifrenizi güncelleyin

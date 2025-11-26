@@ -18,6 +18,7 @@ import {
   Clock,
   FileText,
   LineChart as ChartIcon,
+  LayoutDashboard,
 } from "lucide-react";
 import {
   LineChart,
@@ -182,8 +183,13 @@ export default function AdminDashboard() {
   return (
     <div className="p-4 sm:p-6 space-y-6 sm:space-y-8">
       <div className="mb-6">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
-          📊 Genel Durum
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-3">
+          <div className="p-2 rounded-ios-sm bg-gradient-to-br from-ios-blue/10 to-ios-indigo/10 
+                        dark:from-ios-blue/20 dark:to-ios-indigo/20
+                        border border-ios-blue/20 dark:border-ios-blue/30">
+            <LayoutDashboard className="w-6 h-6 text-ios-blue dark:text-ios-teal" />
+          </div>
+          Anasayfa
         </h1>
         <p className="text-sm text-ios-gray dark:text-gray-400">
           Sistem istatistikleri ve son aktiviteler
